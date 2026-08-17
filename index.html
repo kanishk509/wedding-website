@@ -129,11 +129,15 @@
             border-top: 1px dashed #FF1493;
         }
 
-        .leaf-icon {
+        /* Styling for the new food photo */
+        .food-photo {
             display: block;
-            margin: 10px auto;
-            width: 40px;
-            height: 40px;
+            margin: 15px auto 0;
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .faq-item {
@@ -185,7 +189,7 @@
 
     <header>
         <h1>Ananya & Kanishk</h1>
-        <p>November 25 & 26 • Yermal</p>
+        <p>November 25 & 26 • Mangalore</p>
     </header>
 
     <div class="container">
@@ -204,7 +208,7 @@
                     <p><strong>November 25th<br>5:00 PM - 10:00 PM</strong></p>
                     <p>Peninsula Del Mar<br>
                     Open Deck<br>
-                    Yermal</p>
+                    Mangalore</p>
                     <div class="attire-note">
                         <strong>Attire:</strong> Desi in bright, colorful colors (pinks, blues, yellows, etc.).<br>
                         <em>Please come prepared for lots of dancing!</em>
@@ -216,17 +220,11 @@
                     <p><strong>November 26th<br>9:00 AM - 2:00 PM</strong></p>
                     <p>Peninsula Del Mar<br>
                     Lawn<br>
-                    Yermal</p>
+                    Mangalore</p>
                     <div class="attire-note">
                         <strong>Attire:</strong> Traditional South Indian attire.<br><br>
                         <em>Look forward to a traditional Banana Leaf meal!</em>
-                        <svg class="leaf-icon" viewBox="0 0 24 24" fill="none" stroke="#8E9B90" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 22C2 22 4 10 14 2C14 2 22 4 22 14C22 24 10 22 10 22C10 22 6 22 2 22Z"/>
-                            <path d="M2 22L12 12"/>
-                            <path d="M12 12L15 9"/>
-                            <path d="M8 16L12 14"/>
-                            <path d="M15 15L17 12"/>
-                        </svg>
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Traditional Indian Meal" class="food-photo">
                     </div>
                 </div>
 
@@ -235,7 +233,7 @@
                     <p><strong>November 26th<br>7:00 PM - 10:00 PM</strong></p>
                     <p>Peninsula Del Mar<br>
                     Open Deck<br>
-                    Yermal</p>
+                    Mangalore</p>
                     <div class="attire-note">
                         <strong>Attire:</strong> Western or Desi night-time attire.<br>
                         <em>Join us for a small celebration to wrap up the festivities!</em>
@@ -252,24 +250,36 @@
             <p><em>Travel Tip: Direct flights into Mangaluru (IXE) are also frequently available from other major transit hubs like Mumbai (BOM) and New Delhi (DEL).</em></p>
         </section>
 
+        <section id="tourism">
+            <h2>Explore Mangalore</h2>
+            <p>If you have some free time during the wedding weekend, we highly recommend exploring the area! The coastal region is famous for a few things you definitely shouldn't miss:</p>
+            <div class="details-grid">
+                <div class="details-card">
+                    <h3>Pristine Beaches</h3>
+                    <p>Spend a relaxing morning by the water. Tannirbhavi Beach and Panambur Beach are local favorites, offering gorgeous golden sands and peaceful coastal views.</p>
+                </div>
+                <div class="details-card">
+                    <h3>Incredible Local Food</h3>
+                    <p>Mangalore is an absolute paradise for food lovers. Be sure to try the famous Mangalorean seafood, Chicken Ghee Roast, and soft Neer Dosas at local spots like Machali or Giri Manja's.</p>
+                </div>
+                <div class="details-card">
+                    <h3>Culture & Cafes</h3>
+                    <p>Visit the stunning St. Aloysius Chapel, known for its beautiful frescoes, or explore the ancient coastal temples. And for a quick pick-me-up, grab a cup of local filter coffee or find a cozy cafe to enjoy a great morning latte.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="faq">
             <h2>Questions & Answers</h2>
             
             <div class="faq-item">
                 <h3>Do I need a visa to attend the wedding?</h3>
                 <p>Yes, international guests will require a visa to enter India.</p>
-                <p><strong>For US Citizens:</strong> You can easily apply for an <a href="https://indianvisaonline.gov.in/evisa/tvoa.html" target="_blank">e-Tourist Visa online</a> prior to your travel.</p>
-                <p><strong>For Chinese Citizens:</strong> A standard tourist visa is required. Please check with your local Indian embassy or consulate well in advance of the wedding to verify current processing times and specific application requirements.</p>
             </div>
 
             <div class="faq-item">
-                <h3>Where should I park?</h3>
-                <p>There is complimentary valet parking available at the venue for all our guests.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Are there room blocks for out-of-town guests?</h3>
-                <p>Yes! We have a block of rooms reserved at [Hotel Name]. You can book your stay using <a href="#" target="_blank">this link</a>.</p>
+                <h3>Where will I be staying, and how do I get to the venues?</h3>
+                <p>We are taking care of all room bookings and transportation to the venues in Mangalore for our guests! Please share your travel itinerary with us as soon as possible so we can finalize your accommodations and coordinate your rides.</p>
             </div>
         </section>
 
