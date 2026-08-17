@@ -33,7 +33,7 @@
         header {
             position: relative;
             text-align: center;
-            height: 45vh; /* Standard, elegant banner height */
+            height: 45vh; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -60,7 +60,7 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             background-size: cover;
-            background-position: center 35%; /* Anchors the crop near the upper-middle to keep faces in view */
+            background-position: center 35%; 
             opacity: 0;
             animation: fadeAnimation 20s infinite;
         }
@@ -150,76 +150,89 @@
             justify-content: flex-start;
         }
 
-        .attire-note {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px dashed #ccc;
+        .special-callout {
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #fafafa;
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+            text-align: left;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* --- PINTEREST-STYLE STACKED EVENT CARDS --- */
+        .schedule-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .event-card {
+            display: flex;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            text-align: left;
+            border: 1px solid #f0f0f0;
+        }
+
+        .event-image {
+            flex: 0 0 45%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .event-details {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .event-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            align-self: flex-start;
+        }
+
+        .tag-sangeet { background: rgba(255,20,147,0.1); color: #FF1493; }
+        .tag-wedding { background: rgba(122,29,46,0.1); color: #7A1D2E; }
+        .tag-afterparty { background: rgba(20,30,48,0.1); color: #141E30; }
+
+        .event-details h3 {
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .event-details p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .attire-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fafafa;
+            border-radius: 8px;
+            border-left: 3px solid #ddd;
             font-size: 0.95rem;
         }
 
-        /* --- INDIVIDUAL EVENT CARD STYLING --- */
+        .attire-sangeet { border-left-color: #FF1493; }
+        .attire-wedding { border-left-color: #7A1D2E; }
+        .attire-afterparty { border-left-color: #141E30; }
 
-        /* Sangeet - Bright & Vibrant */
-        .sangeet-card {
-            background: linear-gradient(135deg, rgba(255,20,147,0.05), rgba(0,191,255,0.05), rgba(255,215,0,0.05));
-            position: relative;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-        }
-        .sangeet-card::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            z-index: -1;
-            margin: -2px;
-            border-radius: 4px;
-            background: linear-gradient(45deg, #FF1493, #00BFFF, #FFD700);
-        }
-        .sangeet-card .attire-note {
-            border-top: 1px dashed #FF1493;
-        }
-
-        /* Wedding - Traditional Gold & Ruby */
-        .wedding-card {
-            background: linear-gradient(135deg, rgba(122,29,46,0.05), rgba(212,175,55,0.05));
-            position: relative;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-        }
-        .wedding-card::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            z-index: -1;
-            margin: -2px;
-            border-radius: 4px;
-            background: linear-gradient(45deg, #7A1D2E, #D4AF37, #7A1D2E);
-        }
-        .wedding-card .attire-note {
-            border-top: 1px dashed #7A1D2E;
-        }
-
-        /* After Party - Night-time Midnight & Gold */
-        .after-party-card {
-            background: linear-gradient(135deg, rgba(20,30,48,0.03), rgba(36,59,85,0.05));
-            position: relative;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-        }
-        .after-party-card::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            z-index: -1;
-            margin: -2px;
-            border-radius: 4px;
-            background: linear-gradient(45deg, #141E30, #243B55, #D4AF37);
-        }
-        .after-party-card .attire-note {
-            border-top: 1px dashed #243B55;
-        }
-        /* ---------------------------------- */
-
+        /* --- FAQ STYLES --- */
         .faq-item {
             text-align: left;
             margin-bottom: 20px;
@@ -255,12 +268,22 @@
             color: #888;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .event-card {
+                flex-direction: column;
+            }
+            .event-image {
+                height: 250px;
+                flex: none;
+            }
+            .event-details {
+                padding: 25px;
+            }
             .header-content h1 {
                 font-size: 2.8rem;
             }
             header {
-                height: 40vh; /* Scaled slightly for smaller screens */
+                height: 40vh; 
             }
             section {
                 padding: 30px 15px;
@@ -292,41 +315,50 @@
 
         <section id="schedule">
             <h2>The Events</h2>
-            <div class="details-grid">
+            <div class="schedule-stack">
                 
-                <div class="details-card sangeet-card">
-                    <h3 style="color: #FF1493;">Mehendi + Sangeet</h3>
-                    <p><strong>November 25th<br>5:00 PM - 10:00 PM</strong></p>
-                    <p>Peninsula Del Mar<br>
-                    Open Deck<br>
-                    Mangalore</p>
-                    <div class="attire-note">
-                        <strong>Attire:</strong> Desi in bright, colorful colors (pinks, blues, yellows, etc.).<br>
-                        <em>Please come prepared for lots of dancing!</em>
-                    </div>
-                </div>
-                
-                <div class="details-card wedding-card">
-                    <h3 style="color: #7A1D2E;">Wedding</h3>
-                    <p><strong>November 26th<br>9:00 AM - 2:00 PM</strong></p>
-                    <p>Peninsula Del Mar<br>
-                    Lawn<br>
-                    Mangalore</p>
-                    <div class="attire-note">
-                        <strong>Attire:</strong> Traditional South Indian attire.<br><br>
-                        <em>Look forward to a traditional Banana Leaf meal!</em>
+                <!-- SANGEET CARD -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="event-details">
+                        <span class="event-tag tag-sangeet">Day 1</span>
+                        <h3 style="color: #FF1493;">Mehendi + Sangeet</h3>
+                        <p><strong>November 25th • 5:00 PM - 10:00 PM</strong></p>
+                        <p>Peninsula Del Mar, Open Deck<br>Mangalore</p>
+                        <div class="attire-box attire-sangeet">
+                            <strong>Attire:</strong> Desi in bright, colorful colors (pinks, blues, yellows, etc.).<br><br>
+                            <em>Please come prepared for lots of dancing!</em>
+                        </div>
                     </div>
                 </div>
 
-                <div class="details-card after-party-card">
-                    <h3 style="color: #141E30;">After Party</h3>
-                    <p><strong>November 26th<br>7:00 PM - 10:00 PM</strong></p>
-                    <p>Peninsula Del Mar<br>
-                    Open Deck<br>
-                    Mangalore</p>
-                    <div class="attire-note">
-                        <strong>Attire:</strong> Western or Desi night-time attire.<br>
-                        <em>Join us for a small celebration to wrap up the festivities!</em>
+                <!-- WEDDING CARD -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1583089892943-e02e5ee81861?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="event-details">
+                        <span class="event-tag tag-wedding">Day 2</span>
+                        <h3 style="color: #7A1D2E;">Wedding Ceremony</h3>
+                        <p><strong>November 26th • 9:00 AM - 2:00 PM</strong></p>
+                        <p>Peninsula Del Mar, Lawn<br>Mangalore</p>
+                        <div class="attire-box attire-wedding">
+                            <strong>Attire:</strong> Traditional South Indian attire.<br><br>
+                            <em>Look forward to a traditional Banana Leaf meal!</em>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AFTER PARTY CARD -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="event-details">
+                        <span class="event-tag tag-afterparty">Day 2 Evening</span>
+                        <h3 style="color: #141E30;">After Party</h3>
+                        <p><strong>November 26th • 7:00 PM - 10:00 PM</strong></p>
+                        <p>Peninsula Del Mar, Open Deck<br>Mangalore</p>
+                        <div class="attire-box attire-afterparty">
+                            <strong>Attire:</strong> Western or Desi night-time attire.<br><br>
+                            <em>Join us for a small celebration to wrap up the festivities!</em>
+                        </div>
                     </div>
                 </div>
 
@@ -359,14 +391,37 @@
             </div>
         </section>
 
+        <section id="shopping">
+            <h2>Shopping for Traditional Attire</h2>
+            <p>If you're looking to buy Indian wear for the events, here are a few great areas to explore!</p>
+            <div class="details-grid">
+                <div class="details-card">
+                    <h3>Bangalore</h3>
+                    <p><strong>Commercial Street:</strong> Endless options for lehengas, kurtas, and jewelry at every price point.</p>
+                    <p><strong>Jayanagar:</strong> The perfect area to find traditional silk sarees and authentic South Indian attire.</p>
+                    <p><strong>Indiranagar:</strong> Great for high-end designer boutiques and modern fusion wear.</p>
+                </div>
+                <div class="details-card">
+                    <h3>Mangalore</h3>
+                    <p><strong>KS Rao Road & Hampankatta:</strong> The main local hub for traditional clothing stores, trusted textile shops, and tailoring.</p>
+                    <p><strong>City Centre Mall:</strong> Great for ready-to-wear ethnic brands and convenient, all-in-one shopping.</p>
+                </div>
+            </div>
+
+            <div class="special-callout">
+                <h3 style="color: var(--primary); margin-top: 0;">Ordering Online? Let us help!</h3>
+                <p>If you prefer to buy your outfits online (from sites like Kalki Fashion, Myntra, or Nykaa Fashion) and don't want to travel internationally with extra luggage, you are welcome to pre-order your clothes and have them shipped directly to our house in Bangalore!</p>
+                <p>We will safely pack them up and bring them directly to you in Mangalore during the wedding week.</p>
+                <p><strong>Have questions about what to wear or want to ship your order to us? Just text Ananya or Kanishk!</strong></p>
+            </div>
+        </section>
+
         <section id="faq">
             <h2>Questions & Answers</h2>
             
             <div class="faq-item">
                 <h3>Do I need a visa to attend the wedding?</h3>
-                <p>Yes, international guests will require a visa to enter India.</p>
-                <p><strong>For US Citizens:</strong> You can easily apply for an <a href="https://indianvisaonline.gov.in/evisa/tvoa.html" target="_blank">e-Tourist Visa online</a> prior to your travel.</p>
-                <p><strong>For Chinese Citizens:</strong> A standard tourist visa is required. Please check with your local Indian embassy or consulate well in advance of the wedding to verify current processing times and specific application requirements.</p>
+                <p>Yes, international guests will require a visa to enter India. Please check with your local Indian embassy or consulate well in advance of the wedding to verify current processing times and specific e-Visa or tourist visa application requirements.</p>
             </div>
 
             <div class="faq-item">
