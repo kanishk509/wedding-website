@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananya & Kanishk's Wedding</title>
+    <style>
+        /* Modern, Elegant South Indian Inspired Palette */
+        :root {
+            --primary: #7A1D2E;    /* Deep Ruby/Maroon */
+            --accent: #D4AF37;     /* Metallic Gold */
+            --bg: #FAFAF5;         /* Warm Ivory */
+            --text: #333333;       /* Soft Black */
+            --card-bg: #FFFFFF;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            font-weight: normal;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Layout styles */
+        header {
+            text-align: center;
+            padding: 12vh 20px;
+            background-color: var(--card-bg);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            text-align: center;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 2px solid var(--accent);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent);
+            margin: 15px auto 0;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .details-card {
+            flex: 1 1 300px;
+            padding: 20px;
+            border: 1px solid #f0f0f0;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+
+        .faq-item {
+            text-align: left;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            color: var(--text);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid var(--accent);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            section {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ananya & Kanishk</h1>
+        <p>November 25 & 26 • Seattle, WA</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="welcome">
+            <h2>Welcome</h2>
+            <p>We are so incredibly excited to celebrate our wedding with our closest family and friends. You'll find all the details you need for our wedding weekend right here.</p>
+        </section>
+
+        <section id="schedule">
+            <h2>The Events</h2>
+            <div class="details-grid">
+                <div class="details-card">
+                    <h3>Day 1 Celebrations</h3>
+                    <p><strong>November 25th • [Time]</strong></p>
+                    <p>[Venue Name]<br>
+                    [Venue Address]<br>
+                    Seattle, WA [Zip Code]</p>
+                </div>
+                <div class="details-card">
+                    <h3>Wedding & Reception</h3>
+                    <p><strong>November 26th • [Time]</strong></p>
+                    <p>[Venue Name]<br>
+                    [Venue Address]<br>
+                    Seattle, WA [Zip Code]</p>
+                    <p><em>Dinner, drinks, and dancing to follow!</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>Questions & Answers</h2>
+            
+            <div class="faq-item">
+                <h3>What is the dress code?</h3>
+                <p>We would love to see our family and friends get dressed up for our big day! The dress code is formal/traditional attire.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Where should I park?</h3>
+                <p>There is complimentary valet parking available at the venue for all our guests.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Are there room blocks for out-of-town guests?</h3>
+                <p>Yes! We have a block of rooms reserved at [Hotel Name]. You can book your stay using <a href="#" target="_blank">this link</a>.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>We can't wait to celebrate with you!</p>
+    </footer>
+
+</body>
+</html>
