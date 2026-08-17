@@ -170,12 +170,11 @@
 
         .event-card {
             display: flex;
-            background: #fff;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: left;
-            border: 1px solid #f0f0f0;
+            border: none;
         }
 
         .event-image {
@@ -204,33 +203,55 @@
             align-self: flex-start;
         }
 
-        .tag-sangeet { background: rgba(255,20,147,0.1); color: #FF1493; }
-        .tag-wedding { background: rgba(122,29,46,0.1); color: #7A1D2E; }
-        .tag-afterparty { background: rgba(20,30,48,0.1); color: #141E30; }
-
         .event-details h3 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-top: 0;
             margin-bottom: 10px;
         }
 
         .event-details p {
             margin: 5px 0;
-            color: #555;
+            font-size: 1.05rem;
         }
 
         .attire-box {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #fafafa;
+            margin-top: 25px;
+            padding: 15px 20px;
             border-radius: 8px;
-            border-left: 3px solid #ddd;
+            border-left: 4px solid;
             font-size: 0.95rem;
+            line-height: 1.5;
         }
 
-        .attire-sangeet { border-left-color: #FF1493; }
-        .attire-wedding { border-left-color: #7A1D2E; }
-        .attire-afterparty { border-left-color: #141E30; }
+        /* Sangeet - Vibrant Pinterest Vibe */
+        .details-sangeet {
+            background: linear-gradient(135deg, #e52d65 0%, #f7702c 100%);
+            color: #ffffff;
+        }
+        .details-sangeet h3 { color: #ffffff !important; }
+        .details-sangeet p { color: #fff3f6 !important; }
+        .tag-sangeet { background: rgba(255,255,255,0.25); color: #ffffff; }
+        .attire-sangeet { background: rgba(0,0,0,0.15); border-left-color: #FFD700; color: #ffffff; }
+
+        /* Wedding - Traditional Gold & Ruby */
+        .details-wedding {
+            background: linear-gradient(135deg, #7A1D2E 0%, #4a0f1a 100%);
+            color: #ffffff;
+        }
+        .details-wedding h3 { color: #D4AF37 !important; }
+        .details-wedding p { color: #f2e3e5 !important; }
+        .tag-wedding { background: rgba(212,175,55,0.2); color: #D4AF37; }
+        .attire-wedding { background: rgba(0,0,0,0.2); border-left-color: #D4AF37; color: #ffffff; }
+
+        /* After Party - Midnight & Gold */
+        .details-afterparty {
+            background: linear-gradient(135deg, #141E30 0%, #0d121f 100%);
+            color: #ffffff;
+        }
+        .details-afterparty h3 { color: #ffffff !important; }
+        .details-afterparty p { color: #d0d5df !important; }
+        .tag-afterparty { background: rgba(255,255,255,0.15); color: #ffffff; }
+        .attire-afterparty { background: rgba(255,255,255,0.08); border-left-color: #D4AF37; color: #ffffff; }
 
         /* --- FAQ STYLES --- */
         .faq-item {
@@ -277,7 +298,7 @@
                 flex: none;
             }
             .event-details {
-                padding: 25px;
+                padding: 30px 20px;
             }
             .header-content h1 {
                 font-size: 2.8rem;
@@ -319,10 +340,10 @@
                 
                 <!-- SANGEET CARD -->
                 <div class="event-card">
-                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="event-details">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1621272036047-bb0f76bbc1ad?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="event-details details-sangeet">
                         <span class="event-tag tag-sangeet">Day 1</span>
-                        <h3 style="color: #FF1493;">Mehendi + Sangeet</h3>
+                        <h3>Mehendi + Sangeet</h3>
                         <p><strong>November 25th • 5:00 PM - 10:00 PM</strong></p>
                         <p>Peninsula Del Mar, Open Deck<br>Mangalore</p>
                         <div class="attire-box attire-sangeet">
@@ -335,9 +356,9 @@
                 <!-- WEDDING CARD -->
                 <div class="event-card">
                     <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1583089892943-e02e5ee81861?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="event-details">
+                    <div class="event-details details-wedding">
                         <span class="event-tag tag-wedding">Day 2</span>
-                        <h3 style="color: #7A1D2E;">Wedding Ceremony</h3>
+                        <h3>Wedding Ceremony</h3>
                         <p><strong>November 26th • 9:00 AM - 2:00 PM</strong></p>
                         <p>Peninsula Del Mar, Lawn<br>Mangalore</p>
                         <div class="attire-box attire-wedding">
@@ -350,9 +371,9 @@
                 <!-- AFTER PARTY CARD -->
                 <div class="event-card">
                     <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="event-details">
+                    <div class="event-details details-afterparty">
                         <span class="event-tag tag-afterparty">Day 2 Evening</span>
-                        <h3 style="color: #141E30;">After Party</h3>
+                        <h3>After Party</h3>
                         <p><strong>November 26th • 7:00 PM - 10:00 PM</strong></p>
                         <p>Peninsula Del Mar, Open Deck<br>Mangalore</p>
                         <div class="attire-box attire-afterparty">
