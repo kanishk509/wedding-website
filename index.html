@@ -39,7 +39,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background-color: #1a0f12; /* Rich dark base instead of pure black */
+            background-color: #1a0f12; 
         }
 
         .slideshow {
@@ -60,12 +60,12 @@
         .slideshow-image {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-size: contain; /* Keeps the whole photo visible */
+            background-size: contain; 
             background-repeat: no-repeat; 
             background-position: center center; 
             opacity: 0;
             animation: fadeAnimation 20s infinite;
-            z-index: 1; /* Creates a stacking context for the blur */
+            z-index: 1; 
         }
 
         /* The Cinematic Blur Effect for the sides */
@@ -73,10 +73,10 @@
             content: '';
             position: absolute;
             top: -10%; left: -10%; width: 120%; height: 120%;
-            background-image: inherit; /* Pulls the exact same photo */
+            background-image: inherit; 
             background-size: cover; 
             background-position: center center; 
-            filter: blur(25px); /* Creates the soft background glow */
+            filter: blur(25px); 
             z-index: -1; 
             opacity: 0.6;
         }
@@ -188,9 +188,9 @@
             display: flex;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Softer shadow */
             text-align: left;
-            border: none;
+            border: 1px solid #f0f0f0;
         }
 
         .event-image {
@@ -239,35 +239,35 @@
             line-height: 1.5;
         }
 
-        /* Sangeet - Vibrant Pinterest Vibe */
+        /* Sangeet - Subtle Pastel Vibe */
         .details-sangeet {
-            background: linear-gradient(135deg, #e52d65 0%, #f7702c 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, rgba(229,45,101,0.06) 0%, rgba(247,112,44,0.06) 100%);
+            color: var(--text);
         }
-        .details-sangeet h3 { color: #ffffff !important; }
-        .details-sangeet p { color: #fff3f6 !important; }
-        .tag-sangeet { background: rgba(255,255,255,0.25); color: #ffffff; }
-        .attire-sangeet { background: rgba(0,0,0,0.15); border-left-color: #FFD700; color: #ffffff; }
+        .details-sangeet h3 { color: #e52d65 !important; }
+        .details-sangeet p { color: var(--text) !important; }
+        .tag-sangeet { background: rgba(229,45,101,0.15); color: #e52d65; }
+        .attire-sangeet { background: rgba(255,255,255,0.6); border-left-color: #f7702c; color: var(--text); }
 
-        /* Wedding - Traditional Gold & Ruby */
+        /* Wedding - Subtle Gold & Ruby */
         .details-wedding {
-            background: linear-gradient(135deg, #7A1D2E 0%, #4a0f1a 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, rgba(122,29,46,0.06) 0%, rgba(212,175,55,0.06) 100%);
+            color: var(--text);
         }
-        .details-wedding h3 { color: #D4AF37 !important; }
-        .details-wedding p { color: #f2e3e5 !important; }
-        .tag-wedding { background: rgba(212,175,55,0.2); color: #D4AF37; }
-        .attire-wedding { background: rgba(0,0,0,0.2); border-left-color: #D4AF37; color: #ffffff; }
+        .details-wedding h3 { color: #7A1D2E !important; }
+        .details-wedding p { color: var(--text) !important; }
+        .tag-wedding { background: rgba(122,29,46,0.15); color: #7A1D2E; }
+        .attire-wedding { background: rgba(255,255,255,0.6); border-left-color: #D4AF37; color: var(--text); }
 
-        /* After Party - Midnight & Gold */
+        /* After Party - Subtle Midnight Blue */
         .details-afterparty {
-            background: linear-gradient(135deg, #141E30 0%, #0d121f 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, rgba(20,30,48,0.04) 0%, rgba(36,59,85,0.06) 100%);
+            color: var(--text);
         }
-        .details-afterparty h3 { color: #ffffff !important; }
-        .details-afterparty p { color: #d0d5df !important; }
-        .tag-afterparty { background: rgba(255,255,255,0.15); color: #ffffff; }
-        .attire-afterparty { background: rgba(255,255,255,0.08); border-left-color: #D4AF37; color: #ffffff; }
+        .details-afterparty h3 { color: #141E30 !important; }
+        .details-afterparty p { color: var(--text) !important; }
+        .tag-afterparty { background: rgba(20,30,48,0.12); color: #141E30; }
+        .attire-afterparty { background: rgba(255,255,255,0.6); border-left-color: #141E30; color: var(--text); }
 
         /* --- FAQ STYLES --- */
         .faq-item {
@@ -363,7 +363,10 @@
                         <p><strong>November 25th • 5:00 PM - 10:00 PM</strong></p>
                         <p>Peninsula Del Mar, Open Deck<br>Mangalore</p>
                         <div class="attire-box attire-sangeet">
-                            <strong>Attire:</strong> Desi in bright, colorful colors (pinks, blues, yellows, etc.).<br><br>
+                            <p style="margin-top: 0; margin-bottom: 8px;"><strong>Attire Guidelines:</strong></p>
+                            <p>👩 Desi lehengas, sarees, dresses in bright, colorful colors</p>
+                            <p>👨 Desi kurtas, shirts in bright, colorful colors.</p>
+                            <br>
                             <em>Please come prepared for lots of dancing!</em>
                         </div>
                     </div>
@@ -378,7 +381,10 @@
                         <p><strong>November 26th • 9:00 AM - 2:00 PM</strong></p>
                         <p>Peninsula Del Mar, Lawn<br>Mangalore</p>
                         <div class="attire-box attire-wedding">
-                            <strong>Attire:</strong> Traditional South Indian attire.<br><br>
+                            <p style="margin-top: 0; margin-bottom: 8px;"><strong>Attire Guidelines:</strong></p>
+                            <p>👩 Desi attire.</p>
+                            <p>👨 Desi attire.</p>
+                            <br>
                             <em>Look forward to a traditional Banana Leaf meal!</em>
                         </div>
                     </div>
@@ -393,7 +399,10 @@
                         <p><strong>November 26th • 7:00 PM - 10:00 PM</strong></p>
                         <p>Peninsula Del Mar, Open Deck<br>Mangalore</p>
                         <div class="attire-box attire-afterparty">
-                            <strong>Attire:</strong> Western or Desi night-time attire.<br><br>
+                            <p style="margin-top: 0; margin-bottom: 8px;"><strong>Attire Guidelines:</strong></p>
+                            <p>👩  Western (dress) or Desi night-time attire, anything sparkly.</p>
+                            <p>👨  Western (suit) or Desi night-time attire.</p>
+                            <br>
                             <em>Join us for a small celebration to wrap up the festivities!</em>
                         </div>
                     </div>
