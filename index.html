@@ -33,12 +33,13 @@
         header {
             position: relative;
             text-align: center;
-            height: 45vh; 
+            height: 65vh; 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            background-color: #000;
         }
 
         .slideshow {
@@ -59,8 +60,9 @@
         .slideshow-image {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover;
-            background-position: center 35%; 
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            background-position: center center; 
             opacity: 0;
             animation: fadeAnimation 20s infinite;
         }
@@ -160,35 +162,20 @@
             border-left: 4px solid var(--accent);
         }
 
-        /* --- PINTEREST-STYLE STACKED EVENT CARDS --- */
+        /* --- FULL-WIDTH STACKED EVENT CARDS (NO IMAGES) --- */
         .schedule-stack {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 30px;
             margin-top: 40px;
         }
 
         .event-card {
-            display: flex;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: left;
-            border: none;
-        }
-
-        .event-image {
-            flex: 0 0 45%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .event-details {
-            flex: 1;
             padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         .event-tag {
@@ -200,16 +187,15 @@
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            align-self: flex-start;
         }
 
-        .event-details h3 {
+        .event-card h3 {
             font-size: 2.2rem;
             margin-top: 0;
             margin-bottom: 10px;
         }
 
-        .event-details p {
+        .event-card p {
             margin: 5px 0;
             font-size: 1.05rem;
         }
@@ -291,20 +277,13 @@
 
         @media (max-width: 768px) {
             .event-card {
-                flex-direction: column;
-            }
-            .event-image {
-                height: 250px;
-                flex: none;
-            }
-            .event-details {
-                padding: 30px 20px;
+                padding: 25px;
             }
             .header-content h1 {
                 font-size: 2.8rem;
             }
             header {
-                height: 40vh; 
+                height: 50vh; 
             }
             section {
                 padding: 30px 15px;
@@ -339,47 +318,38 @@
             <div class="schedule-stack">
                 
                 <!-- SANGEET CARD -->
-                <div class="event-card">
-                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1621272036047-bb0f76bbc1ad?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="event-details details-sangeet">
-                        <span class="event-tag tag-sangeet">Day 1</span>
-                        <h3>Mehendi + Sangeet</h3>
-                        <p><strong>November 25th • 5:00 PM - 10:00 PM</strong></p>
-                        <p>Peninsula Del Mar, Open Deck<br>Mangalore</p>
-                        <div class="attire-box attire-sangeet">
-                            <strong>Attire:</strong> Desi in bright, colorful colors (pinks, blues, yellows, etc.).<br><br>
-                            <em>Please come prepared for lots of dancing!</em>
-                        </div>
+                <div class="event-card details-sangeet">
+                    <span class="event-tag tag-sangeet">Day 1</span>
+                    <h3>Mehendi + Sangeet</h3>
+                    <p><strong>November 25th • 5:00 PM - 10:00 PM</strong></p>
+                    <p>Peninsula Del Mar, Open Deck<br>Mangalore</p>
+                    <div class="attire-box attire-sangeet">
+                        <strong>Attire:</strong> Desi in bright, colorful colors (pinks, blues, yellows, etc.).<br><br>
+                        <em>Please come prepared for lots of dancing!</em>
                     </div>
                 </div>
 
                 <!-- WEDDING CARD -->
-                <div class="event-card">
-                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1583089892943-e02e5ee81861?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="event-details details-wedding">
-                        <span class="event-tag tag-wedding">Day 2</span>
-                        <h3>Wedding Ceremony</h3>
-                        <p><strong>November 26th • 9:00 AM - 2:00 PM</strong></p>
-                        <p>Peninsula Del Mar, Lawn<br>Mangalore</p>
-                        <div class="attire-box attire-wedding">
-                            <strong>Attire:</strong> Traditional South Indian attire.<br><br>
-                            <em>Look forward to a traditional Banana Leaf meal!</em>
-                        </div>
+                <div class="event-card details-wedding">
+                    <span class="event-tag tag-wedding">Day 2</span>
+                    <h3>Wedding Ceremony</h3>
+                    <p><strong>November 26th • 9:00 AM - 2:00 PM</strong></p>
+                    <p>Peninsula Del Mar, Lawn<br>Mangalore</p>
+                    <div class="attire-box attire-wedding">
+                        <strong>Attire:</strong> Traditional South Indian attire.<br><br>
+                        <em>Look forward to a traditional Banana Leaf meal!</em>
                     </div>
                 </div>
 
                 <!-- AFTER PARTY CARD -->
-                <div class="event-card">
-                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="event-details details-afterparty">
-                        <span class="event-tag tag-afterparty">Day 2 Evening</span>
-                        <h3>After Party</h3>
-                        <p><strong>November 26th • 7:00 PM - 10:00 PM</strong></p>
-                        <p>Peninsula Del Mar, Open Deck<br>Mangalore</p>
-                        <div class="attire-box attire-afterparty">
-                            <strong>Attire:</strong> Western or Desi night-time attire.<br><br>
-                            <em>Join us for a small celebration to wrap up the festivities!</em>
-                        </div>
+                <div class="event-card details-afterparty">
+                    <span class="event-tag tag-afterparty">Day 2 Evening</span>
+                    <h3>After Party</h3>
+                    <p><strong>November 26th • 7:00 PM - 10:00 PM</strong></p>
+                    <p>Peninsula Del Mar, Open Deck<br>Mangalore</p>
+                    <div class="attire-box attire-afterparty">
+                        <strong>Attire:</strong> Western or Desi night-time attire.<br><br>
+                        <em>Join us for a small celebration to wrap up the festivities!</em>
                     </div>
                 </div>
 
